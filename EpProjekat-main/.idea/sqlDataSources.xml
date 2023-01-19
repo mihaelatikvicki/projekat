@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="4eed1ef1-7e7e-44c4-abd9-980d7dc66541" />
+          <option name="name" value="hotel" />
+          <option name="urls">
+            <array>
+              <option value="file://$PROJECT_DIR$/database/hotel.sql" />
+            </array>
+          </option>
+        </State>
+      </list>
+    </option>
+  </component>
+</project>
