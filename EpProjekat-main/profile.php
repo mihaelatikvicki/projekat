@@ -98,11 +98,56 @@ $result=mysqli_fetch_assoc($sql);
                                 <input type="submit" value="Update Profile" name="update" class="btn btn-success btn-group-justified"required style="color:#000;font-weight:bold;height:40px;"/>
                         </div>
                     </div>
-
                 </div>
-               
             </form>
         </div>
+    </div>
+    <hr>
+    <center><h1 style="background-color:#f4ac41;border-radius:10px;padding:10px; display:inline-block;font-weight:bold;">Bookings History</h1></center><br>
+    <div class="container" style="margin-bottom: 40px;">
+        <?php
+        $sqlGetBookings=mysqli_query($con,"select * from room_booking_details WHERE email='$eid'");
+        while($b_res=mysqli_fetch_assoc($sqlGetBookings))
+        {
+        ?>
+            <div style="border: 1px solid #333; padding: 16px; margin-bottom: 16px; border-radius: 10px;">
+                <h3 style="margin: 0; margin-bottom: 16px; background-color:#f4ac41;border-radius:10px;padding:10px; display: inline-block;">Booking (#<?php echo $b_res['id']; ?>)</h3>
+                <p style="margin: 0; margin-bottom: 8px; text-transform:capitalize;"><strong>Room Type: </strong> <?php echo $b_res['room_type']; ?> </p>
+                <p style="margin: 0; margin-bottom: 8px; text-transform:capitalize;"><strong>Occupancy: </strong> <?php echo $b_res['Occupancy']; ?> </p>
+                <p style="margin: 0; margin-bottom: 8px;"><strong>Check In: </strong> <?php echo $b_res['check_in_date']; ?> (<?php echo $b_res['check_in_time'] ?>) </p>
+                <p style="margin: 0; margin-bottom: 8px;"><strong>Check Out: </strong> <?php echo $b_res['check_out_date']; ?> </p>
+                <hr>
+                <form method="post" action="rate_booking.php">
+                    <label for="rating-input">Rate your stay:</label>
+                    <input type="hidden" name="booking_id" value="<?php echo $b_res['id'] ?>" />
+                    <input
+                        type="number"
+                        min="1" max="5"
+                        value="<?php echo $b_res['Rating']; ?>"
+                        class="form-control"
+                        style="width: auto; display:inline-block; margin-left: 8px;"
+                        id="rating-input"
+                        name="rating"
+                        placeholder="1-5"
+                        required
+                        <?php
+                            if($b_res['Rating']) {
+                        ?>
+                        disabled
+                        <?php
+                        }
+                        ?>
+                    />
+                    <input
+                        type="submit"
+                        value="Leave rating"
+                        class="btn btn-success btn-group-justified"
+                        required
+                        style="color:#000;font-weight:bold;width: 120px;border: 1px solid #5cb85c;margin-top: 8px;"
+                    />
+                </form>
+            </div>
+        <?php }?>
     </div>
 </div>
 <?php

@@ -4,6 +4,12 @@ error_reporting(1);
 $eid=$_SESSION['create_account_logged_in'];
 ?>
 <!--Menu Bar Close Here-->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+</style>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">

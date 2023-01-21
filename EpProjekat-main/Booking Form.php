@@ -62,7 +62,7 @@ include('Menu Bar.php');
                         <div class="row">
                             <div class="control-label col-sm-4"><h4>Name:</h4></div>
                             <div class="col-sm-8">
-                                <input type="text" value="<?php echo $result['name']; ?>"  class="form-control" name="name" placeholder="Enter your frist name"required>
+                                <input type="text" value="<?php echo $result['name']; ?>"  class="form-control" name="name" placeholder="Enter your first name"required>
                             </div>
                         </div>
                     </div>

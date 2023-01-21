@@ -12,6 +12,7 @@
         <th>Check Out Time</th>
         <th>Check Out Date</th>
         <th>Occupancy</th>
+        <th>Rating</th>
         <th>Cancel Order</th>
     </tr>
 
@@ -35,6 +36,7 @@
             <td><?php echo $res['check_in_time']; ?></td>
             <td><?php echo $res['check_out_date']; ?></td>
             <td><?php echo $res['Occupancy']; ?></td>
+            <td><?php echo $res['Rating']; ?></td>
             <td><a style="color:red" href="cancel_order.php?booking_id=<?php echo $oid; ?>">Cancel</a></td>
             </td>
         </tr>
